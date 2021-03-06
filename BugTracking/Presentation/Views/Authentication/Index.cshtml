@@ -1,0 +1,37 @@
+﻿@inject IHtmlLocalizer<SharedResources> SharedLocalizer
+@inject IStringLocalizer<Presentation.Views.Authentication.AuthenticationResources> AuthenticationLocalizer
+
+@section Title {
+    <title>@SharedLocalizer["Bug Tracking"] - @AuthenticationLocalizer["Authentication"]</title>
+}
+
+@section Scripts {
+    <script src="~/js/Authentication/auth.js" type="module" defer></script>
+}
+
+<div id="authVue">
+
+    <ul class="login-nav nav nav-pills shadow d-flex justify-content-center">
+        <li class="login-nav-item nav-item">
+            <a class="login-nav-link nav-link d-flex align-items-center justify-content-center"
+               href="#login"
+               v-bind:class="{ active: isOnLogin }"
+               v-on:click="switchToLogin">@AuthenticationLocalizer["Login"]</a>
+        </li>
+        <li class="login-nav-item nav-item">
+            <a class="login-nav-link nav-link d-flex align-items-center justify-content-center"
+               href="#register"
+               v-bind:class="{ active: isOnRegister }"
+               v-on:click="switchToRegister">@AuthenticationLocalizer["Register"]</a>
+        </li>
+    </ul>
+
+    <div id="authContainer" class="container mt-5 shadow">
+        <div v-show="isOnLogin" style="display: none">
+                <partial name="_Login" />
+        </div>
+        <div v-show="isOnRegister" style="display: none">
+                <partial name="_Register" />
+        </div>
+    </div>
+</div>

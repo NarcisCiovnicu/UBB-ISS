@@ -1,0 +1,21 @@
+﻿@inject IStringLocalizer<Presentation.Views.Authentication.AuthenticationResources> AuthenticationLocalizer
+
+
+<div id="loginVue" v-pre>
+    <form class="d-flex flex-column align-items-center" v-on:submit.prevent="onSubmit">
+        <img id="authLogo" class="m-4" src="~/img/Authentication/login_logo.png" />
+
+        <input v-model="email"
+               type="email" class="form-control m-3" autocomplete="on"
+               placeholder="@AuthenticationLocalizer["Email address"]" />
+
+        <input v-model="password"
+               type="password" class="form-control m-3" autocomplete="on"
+               placeholder="@AuthenticationLocalizer["Password"]" />
+
+        <button class="btn btn-primary m-3" type="submit">@AuthenticationLocalizer["Sign In"]</button>
+
+        <div class="m-3">Error Message </div>
+    </form>
+</div>
+

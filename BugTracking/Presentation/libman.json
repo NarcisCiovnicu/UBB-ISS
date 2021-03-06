@@ -3,8 +3,17 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "vue@2.6.11",
+      "library": "vue@3.0.7",
       "destination": "wwwroot/lib/vue/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "js-logger@1.6.1",
+      "destination": "wwwroot/lib/js-logger/",
+      "files": [
+        "src/logger.js",
+        "src/logger.min.js"
+      ]
     }
   ]
 }

@@ -9,6 +9,7 @@
     min-width: 7rem;
     width: 30%;
     height: 100%;
+    cursor: pointer;
 }
 
 .login-nav-link {

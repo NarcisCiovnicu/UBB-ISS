@@ -1,4 +1,4 @@
-﻿@inject IViewLocalizer Localizer
+﻿@inject IHtmlLocalizer<SharedResources> SharedLocalizer
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
     }
     else
     {
-        <title>@Localizer["Bug Tracking"]</title>
+        <title>@SharedLocalizer["Bug Tracking"]</title>
     }
     <partial name="Layout/_GlobalStyles" />
     <partial name="Layout/_Styles" />

@@ -5,14 +5,10 @@ namespace Presentation.Controllers
 {
     public class AuthenticationController : Controller
     {
-        public async Task<IActionResult> Login()
+        public async Task<IActionResult> Index()
         {
             return View();
         }
 
-        public async Task<IActionResult> Register()
-        {
-            return View();
-        }
     }
 }
