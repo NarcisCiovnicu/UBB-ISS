@@ -1,0 +1,13 @@
+﻿
+body {
+    margin-top: 5rem; /* Margin top by header height */
+}
+
+.header {
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    white-space: nowrap; /* all text on the same line */
+    line-height: 4rem;
+    font-size: 2rem;
+}

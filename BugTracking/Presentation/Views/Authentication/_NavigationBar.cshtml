@@ -1,0 +1,14 @@
+﻿@inject IStringLocalizer<Presentation.Views.Authentication.SharedAuthentication> AuthenticationLocalizer
+
+<ul class="login-nav nav nav-pills shadow d-flex justify-content-center">
+    <li class="login-nav-item nav-item">
+        <a class="login-nav-link nav-link d-flex align-items-center justify-content-center"
+           v-bind:class="{ active: activePageName === 'login' }"
+           asp-controller="Authentication" asp-action="Login">@AuthenticationLocalizer["Login"]</a>
+    </li>
+    <li class="login-nav-item nav-item">
+        <a class="login-nav-link nav-link d-flex align-items-center justify-content-center"
+           v-bind:class="{ active: activePageName === 'register' }"
+           asp-controller="Authentication" asp-action="Register">@AuthenticationLocalizer["Register"]</a>
+    </li>
+</ul>

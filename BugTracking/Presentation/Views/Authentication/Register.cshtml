@@ -1,0 +1,41 @@
+﻿@inject IHtmlLocalizer<SharedResources> SharedLocalizer
+@inject IStringLocalizer<Presentation.Views.Authentication.SharedAuthentication> AuthenticationLocalizer
+
+@section Title {
+    <title>@SharedLocalizer["Bug Tracking"] - @AuthenticationLocalizer["Register"] </title>
+}
+
+<div id="registerVue">
+    <partial name="_NavigationBar" />
+
+    <div id="authContainer" class="container mt-5 shadow">
+        <form class="d-flex flex-column align-items-center">
+            <img id="authLogo" class="m-4" src="~/img/Authentication/register_logo.png" />
+
+            <input v-model="registerViewModel.name"
+                   type="text" class="form-control m-3"
+                   placeholder="@AuthenticationLocalizer["Name"]" />
+
+            <input v-model="registerViewModel.email"
+                   type="email" class="form-control m-3"
+                   placeholder="@AuthenticationLocalizer["Email address"]" />
+
+            <input v-model="registerViewModel.password"
+                   type="password" class="form-control m-3"
+                   placeholder="@AuthenticationLocalizer["Password"]" />
+
+            <input v-model="registerViewModel.confirmPassword" v-bind:class="{ 'is-invalid': !isSamePassword }"
+                   type="password" class="form-control m-3"
+                   placeholder="@AuthenticationLocalizer["Confirm Password"]" />
+
+            <button class="btn btn-primary m-3" type="submit">@AuthenticationLocalizer["Register"]</button>
+
+            <div class="m-3">Error Message</div>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script src="~/js/Authentication/register.js"></script>
+}

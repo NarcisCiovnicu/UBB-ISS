@@ -1,0 +1,19 @@
+﻿
+
+.login-nav {
+    height: 4rem;
+}
+
+.login-nav-item {
+    max-width: 30rem;
+    min-width: 7rem;
+    width: 30%;
+    height: 100%;
+}
+
+.login-nav-link {
+    height: 100%;
+    letter-spacing: 0.3rem;
+    font-size: 1.4rem;
+}
+

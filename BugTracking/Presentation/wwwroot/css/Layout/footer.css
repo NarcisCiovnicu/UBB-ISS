@@ -1,0 +1,12 @@
+﻿
+body {
+    margin-bottom: 6rem; /* Margin bottom by footer height */
+}
+
+.footer {
+    position: absolute; /* To stay fixed by bottom (or top, left, right) */
+    bottom: 0; /* Distance from bottom */
+    width: 100%;
+    white-space: nowrap; /* all text on the same line */
+    line-height: 4rem; /* Vertically center the text there */
+}

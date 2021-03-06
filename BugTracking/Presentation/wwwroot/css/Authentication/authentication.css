@@ -1,0 +1,21 @@
+﻿
+#authContainer {
+    max-width: 25rem;
+}
+
+#authLogo {
+    width: 10rem;
+    height: 10rem;
+}
+
+#authContainer .form-control {
+    max-width: 20rem;
+}
+
+#authContainer .btn-primary {
+    min-width: 10rem;
+}
+
+.input-error {
+    border: 5px solid red;
+}
