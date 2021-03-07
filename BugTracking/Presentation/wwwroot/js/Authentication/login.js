@@ -1,44 +1,29 @@
 ﻿
 
-export default class LoginVue {
+const  logger = Logger.get("LoginVue");
 
-    constructor() {
-        this.loginVue = null;
-    }
-
-    mount() {
-        if (this.loginVue != null) {
-            return;
+const loginVue = Vue.createApp({
+    data() {
+        return {
+            email: "",
+            password: ""
         }
-        let logger = Logger.get("LoginVue");
-        this.loginVue = Vue.createApp({
-            data() {
-                return {
-                    email: "",
-                    password: ""
-                }
-            },
+    },
 
-            mounted() {
-                logger.debug("mounted");
-            },
+    mounted() {
+        logger.debug("mounted");
+    },
 
-            unmounted() {
-                logger.debug("unmountet");
-            },
+    unmounted() {
+        logger.debug("unmountet");
+    },
 
-            methods: {
-                onSubmit() {
-                    logger.info("login submitted");
-                    document.location.replace("/");
-                }
-            }
-        });
-        this.loginVue.mount("#loginVue");
+    methods: {
+
+        onSubmit() {
+            logger.info("login submitted");
+            document.location.replace("/");
+        }
     }
-
-    unmount() {
-        this.loginVue.unmount();
-    }
-};
+}).mount("#loginVue");
 

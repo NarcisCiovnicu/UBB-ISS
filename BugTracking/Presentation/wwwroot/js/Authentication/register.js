@@ -1,53 +1,39 @@
 ﻿
 
+const logger = Logger.get("RegisterVue");
 
-export default class RegisterVue {
-    constructor() {
-        this.registerVue = null;
-    }
-
-    mount() {
-        if (this.registerVue != null) {
-            return;
+const registerVue = Vue.createApp({
+    data() {
+        return {
+            error: "",
+            name: "",
+            email: "",
+            password: "",
+            confirmPassword: ""
         }
-        let logger = Logger.get("RegisterVue");
-        this.registerVue = Vue.createApp({
-            data() {
-                return {
-                    error: "",
-                    name: "",
-                    email: "",
-                    password: "",
-                    confirmPassword: ""
-                }
-            },
+    },
 
-            mounted() {
-                logger.debug("mounted");
-            },
+    mounted() {
+        logger.debug("mounted");
+    },
 
-            unmounted() {
-                logger.debug("unmounted");
-            },
+    unmounted() {
+        logger.debug("unmounted");
+    },
 
-            methods: {
-                onSubmit() {
-                    logger.info(" form submitted");
-                    document.location.replace("/");
-                }
-            },
+    methods: {
 
-            computed: {
-                isSamePassword: function () {
-                    return this.password === this.confirmPassword;
-                }
-            }
-        });
-        this.registerVue.mount("#registerVue");
+        onSubmit() {
+            logger.info(" form submitted");
+            document.location.replace("/");
+        }
+    },
+
+    computed: {
+        isSamePassword: function () {
+            return this.password === this.confirmPassword;
+        }
     }
+}).mount("#registerVue");
 
-    unmount() {
-        this.registerVue.unmount();
-    }
-}
 

@@ -1,11 +1,6 @@
 ﻿
-import LoginVue from "./login.js"
-import RegisterVue from "./register.js"
 
-const loginVue = new LoginVue();
-const registerVue = new RegisterVue();
-
-const authLogger = Logger.get("AuthVue");
+const logger = Logger.get("AuthVue");
 
 const authVue = Vue.createApp({
 
@@ -18,15 +13,14 @@ const authVue = Vue.createApp({
     beforeMount() {
         var url = location.href;
         var pageTag = url.substring(url.indexOf("#") + 1);
-        authLogger.debug(pageTag);
+        logger.debug(`Url tag: ${pageTag}`);
         if (pageTag == Constant.Page.Login || pageTag === Constant.Page.Register) {
             this.activePage = pageTag;
         }
     },
 
     mounted() {
-        loginVue.mount();
-        registerVue.mount();
+        logger.debug("mounted");
     },
 
     methods: {
@@ -41,11 +35,11 @@ const authVue = Vue.createApp({
 
     computed: {
         isOnLogin() {
-            authLogger.debug("compute isOnLogin");
+            logger.debug("compute isOnLogin");
             return this.activePage === Constant.Page.Login;
         },
         isOnRegister() {
-            authLogger.debug("compute isOnRegister");
+            logger.debug("compute isOnRegister");
             return this.activePage === Constant.Page.Register;
         }
     }
